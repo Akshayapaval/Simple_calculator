@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	 }
+     body
+     {
+     	background-image: linear-gradient(to right top, #f4de75, #d8e27b, #bce487, #a0e596, #84e5a8, #5ee4c0, #35e1d7, #00ddec, #1bd4ff, #66c7ff, #a0b7ff, #cda5f2);
+     	background-repeat: no-repeat;
+     }
+	 #wrapper
+	{
+		width: 300px;
+		height: 500px;
+		margin: 130px  auto;
+		border:  solid black;
+		border-radius: 30px;
+		box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	}
+	  input[type="text"]
+	{   
+		color: black;
+		float: right;
+		padding-top: 10px;
+		font-size: 35px;
+		font-weight: bold;
+		height: 100px;
+		width: 295px;
+		border-radius: 50px;
+	}
+	
+	.operation
+	{
+		height: 50px;
+		width: 50px;
+		border-radius: 50px;
+		text-align: center;
+		background-color: white;
+		font-size: 20px;
+		font-weight: bold;
+
+
+	}
+    table
+	{
+		
+		border-radius: 30px;
+	}
+	td{
+		text-align: center;
+
+	}
+	#foot
+	{
+		padding-bottom:30px;
+		padding-left: 30px;
+	}
+</style>
+</head>
+<body>
+	
+	<div id="wrapper">
+		
+		<div id="disp"><input type="text" id="result"></input></div>
+		<div id="op">
+			<table style="height:390px;width:290px;">
+				<tr>
+					<td colspan="3"><input type="button" value="AC" onclick="clr()" class="operation" style="background-color:#D83A56;height:50px;width:200px;"></td>
+					<td><input type="button" class="operation" onclick="dis('/')" value="/"/></td>
+				</tr>
+				<tr>
+					<td><input type="button" onclick="dis('7')" class="operation" value="7"></td>
+					<td ><input type="button" class="operation" onclick="dis('8')" value="8"></td>
+					<td><input type="button" class="operation" onclick="dis('9')" value="9"></td>
+					<td><input type="button" class="operation" onclick="dis('*')" value="x"></td>
+				</tr>
+				<tr>
+					<td><input type="button" onclick="dis('4')" class="operation" value="4" ></td>
+					<td ><input type="button" onclick="dis('5')" class="operation" value="5"></td>
+					<td><input type="button" onclick="dis('6')" class="operation" value="6" ></td>
+					<td><input type="button" onclick="dis('-')" class="operation" value="-" ></td>
+				</tr>
+				<tr>
+					<td><input type="button" onclick="dis('1')" class="operation" value="1"></td>
+					<td ><input type="button" onclick="dis('2')" class="operation" value="2"></td>
+					<td><input type="button" onclick="dis('3')" class="operation" value="3"></td>
+					<td><input type="button" onclick="dis('+')" class="operation" value="+"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="button" onclick="dis('0')" value="0" style="height:50px;width:150px;" class="operation" ></td>
+					<td><input type="button" onclick="dis('.')" class="operation" value="." ></td>
+					<td><input type="button" onclick="solve()" class="operation" value="=" ></td>
+				</tr>
+		</table>
+	</div>
+  </div>
+  <div id="foot"><bold> Made by AP Akshaya</bold></div>
+<script>
+function dis(val)
+         {
+             
+             document.getElementById("result").value+=val;
+              
+
+         }
+           
+         
+         function solve()
+         {
+             let x = document.getElementById("result").value
+             let y = eval(x)
+             document.getElementById("result").value = y
+         }
+           
+         
+         function clr()
+         {
+             document.getElementById("result").value = ""
+         }
+</script>
+</body>
+</html>
